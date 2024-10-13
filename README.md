@@ -33,8 +33,6 @@ pipenv run dns_check <fichier_domaines> [--tcp] [--json] [--summary]
 
 ## Script NRPE (check_dns_domains.sh)
 
-### But
-
 Ce script bash sert d'interface entre le script Python et un système de surveillance compatible NRPE (comme Nagios ou Icinga).
 
 ### Prérequis
@@ -46,8 +44,8 @@ Ce script bash sert d'interface entre le script Python et un système de surveil
 
 ### Installation
 
-1. Placez le script check_dns_domains.sh dans le répertoire des plugins NRPE.
-1. Rendez le script exécutable : chmod +x check_dns_domains.sh
+1. Placez le script `check_dns_domains.sh` dans le répertoire des plugins NRPE.
+1. Rendez le script exécutable : `chmod +x check_dns_domains.sh`
 1. Configurez NRPE pour utiliser ce script.
 
 ### Configuration NRPE
@@ -65,14 +63,14 @@ Le script NRPE :
 - Vérifie les dépendances nécessaires
 - Exécute le script Python dans l'environnement pipenv
 - Analyse la sortie JSON du script Python
-- Retourne un statut NRPE approprié (OK, WARNING, CRITICAL) basé sur les résultats
+- Retourne un statut NRPE approprié (**OK**, **WARNING**, **CRITICAL**) basé sur les résultats
 
 ### Codes de sortie
 
-- 0 (OK) : Tous les domaines sont opérationnels
-- 1 (WARNING) : Certains domaines ont des problèmes mineurs
-- 2 (CRITICAL) : Un ou plusieurs domaines n'ont aucun serveur DNS opérationnel
-- 3 (UNKNOWN) : Erreur d'exécution ou dépendances manquantes
+- 0 (**OK**) : Tous les domaines sont opérationnels
+- 1 (**WARNING**) : Certains domaines ont des problèmes mineurs
+- 2 (**CRITICAL**) : Un ou plusieurs domaines n'ont aucun serveur DNS opérationnel
+- 3 (**UNKNOWN**) : Erreur d'exécution ou dépendances manquantes
 
 ## Maintenance
 
